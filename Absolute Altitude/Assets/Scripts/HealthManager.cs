@@ -77,8 +77,7 @@ public class HealthManager : MonoBehaviour
             currentHealth -= damageToTake;
             if (currentHealth <= 0)
             {
-                //Death stuff;
-                Debug.Log("You Died");
+                Destroy(gameObject);
             }
         }
 

@@ -11,12 +11,12 @@ public class ProjectileSpawner : MonoBehaviour
     public float spawnDelay;
     private float spawnTimer;
 
-    public ParticleSystem particles;
+   // public ParticleSystem particles;
 
     // Start is called before the first frame update
     void Start()
     {
-        particles = GetComponentInChildren<ParticleSystem>();
+        //particles = GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class ProjectileSpawner : MonoBehaviour
             {
                 GameObject projectileClone = Instantiate(projectile, spawnPosition.position, spawnPosition.rotation);
                 spawnTimer = 0;
-                particles.Play();
+                //particles.Play();
             }
         }
     }

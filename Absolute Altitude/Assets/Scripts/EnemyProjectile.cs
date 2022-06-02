@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class EnemyProjectile : MonoBehaviour
 {
     public Vector3 firingForce;
     public float damage;
     public float lifeTime;
     public float bulletSpread;
-  
+
     private Rigidbody bulletRB;
 
     // Start is called before the first frame update
@@ -39,17 +39,15 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Player" && other.gameObject.tag != "Bullet")
+        if (other.gameObject.tag != "Enemy" && other.gameObject.tag != "Bullet")
         {
-            if (other.gameObject.tag == "Enemy")
+            if (other.gameObject.tag == "Player")
             {
-                other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
-               // Destroy(other.gameObject);
+                other.gameObject.GetComponent<HealthManager>().TakeDamage(damage);
+                //Destroy(other.gameObject);
             }
-  
-            //Debug.Log(other.gameObject.name);
+
             Destroy(gameObject);
         }
-        
-    }
+    }      
 }

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 932122233686640534}
   - component: {fileID: 5579191679352428426}
   - component: {fileID: 3820153415152535051}
-  - component: {fileID: 2794971848813776578}
   - component: {fileID: -3186184661605665651}
   - component: {fileID: 226410993362967947}
+  - component: {fileID: 2768384161866100666}
   m_Layer: 0
   m_Name: EnemyProjectile
   m_TagString: Bullet
@@ -93,27 +93,11 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5899230456881024405}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2794971848813776578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5899230456881024405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85389e9d0c4728b4fa2a63ecfb4a2f26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firingForce: {x: 0, y: 0, z: 20}
-  damage: 10
-  lifeTime: 2
-  bulletSpread: 0
 --- !u!54 &-3186184661605665651
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -142,7 +126,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.98039216, g: 0.80562884, b: 0, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -192,3 +176,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2768384161866100666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899230456881024405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfbd8fee988a4f34eab7127e291554b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firingForce: {x: 0, y: 20, z: 0}
+  damage: 10
+  lifeTime: 2
+  bulletSpread: 0
