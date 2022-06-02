@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
 {
     private Text timerText;
     public float timer;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,6 @@ public class Timer : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        timerText.text = timer.ToString("00");
+        timerText.text = timer.ToString("00"); 
     }
 }
