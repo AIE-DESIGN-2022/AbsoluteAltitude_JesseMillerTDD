@@ -9,66 +9,36 @@ public class HealthManager : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
 
-    public Slider shieldSlider;
+    public GameObject shieldObject;
     public float maxShield;
     public float currentShield;
 
-    public float timeToStartRegen;
-    public float timeToRegen;
-
-    private float timeSinceDamage;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         healthSlider.maxValue = currentHealth;
+        shieldObject.SetActive(false);  
 
-        currentShield = maxShield;
-        shieldSlider.maxValue = currentShield;
 
         UpdateHealthBar();
-        UpdateShieldBar();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeSinceDamage += Time.deltaTime;
 
-        if (timeSinceDamage >= timeToStartRegen && currentShield < maxShield)
-        {
-            StartCoroutine(ShieldRegen());
-        }
     }
 
-    private IEnumerator ShieldRegen()
-    {
-        float regenTime = 0f;
-        float shieldValue = currentShield;
 
-        while (regenTime < timeToRegen && timeSinceDamage > timeToStartRegen)
-
-        {
-            regenTime += Time.deltaTime;
-            float lerpTime = regenTime / timeToRegen;
-            shieldSlider.value = Mathf.Lerp(shieldValue, maxShield, lerpTime);
-            currentShield = shieldSlider.value;
-            UpdateShieldBar();
-
-            yield return null;
-        }
-    }
 
     public void TakeDamage(float damageToTake)
     {
         if (currentShield > 0)
         {
-            currentShield -= damageToTake;
-            if (currentShield < 0)
-            {
-                currentHealth += currentShield;
-            }
+            currentShield = 0;
+            shieldObject.SetActive(false);
         }
 
         else
@@ -81,10 +51,7 @@ public class HealthManager : MonoBehaviour
             }
         }
 
-        timeSinceDamage = 0;
-
         UpdateHealthBar();
-        UpdateShieldBar();
     }
 
     public void ReceiveHealth(float healthToReceive)
@@ -103,8 +70,9 @@ public class HealthManager : MonoBehaviour
         healthSlider.value = currentHealth;
     }
 
-    private void UpdateShieldBar()
+    public void TurnShieldOn()
     {
-        shieldSlider.value = currentShield;
+        currentShield = 1;
+        shieldObject.SetActive(true);
     }
 }

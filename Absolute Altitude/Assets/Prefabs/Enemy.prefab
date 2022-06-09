@@ -303,7 +303,7 @@ MonoBehaviour:
   spawnPosition: {fileID: 2010412353540084880}
   projectile: {fileID: 5899230456881024405, guid: 38b385f52eb11e44f9e408a045690292, type: 3}
   targetObject: {fileID: 473651561140339477}
-  spawnDelay: 0.5
+  spawnDelay: 1
 --- !u!1 &4263781298643309375
 GameObject:
   m_ObjectHideFlags: 0
