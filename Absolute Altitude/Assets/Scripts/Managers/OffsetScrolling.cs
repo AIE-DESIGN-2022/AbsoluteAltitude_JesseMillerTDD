@@ -21,4 +21,9 @@ public class OffsetScrolling : MonoBehaviour
         Renderer.sharedMaterial.SetTextureOffset("_MainTex", offset);
     }
 
+    public void ChangeBG(Material materialToChangeTo) 
+    {
+        Renderer.material = materialToChangeTo;
+    }
+
 }

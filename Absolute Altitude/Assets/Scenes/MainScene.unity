@@ -271,7 +271,6 @@ Transform:
   - {fileID: 1460324749}
   - {fileID: 1001756619}
   - {fileID: 2061800639}
-  - {fileID: 435198496}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -531,7 +530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1214941917565726261, guid: 2da04587b7c20b54c97653cceeeb63a4, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1214941917565726261, guid: 2da04587b7c20b54c97653cceeeb63a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -645,8 +644,8 @@ Transform:
   m_LocalPosition: {x: -0.9854665, y: 0.5809622, z: 0.015372019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 107226968}
-  m_RootOrder: 7
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &566315212
 GameObject:
@@ -677,7 +676,7 @@ Transform:
   m_Children:
   - {fileID: 1349470923}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &585767763 stripped
 GameObject:
@@ -782,6 +781,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
+  BGmats:
+  - {fileID: 2100000, guid: b2c0fe287bb8fcf4ea8fda76270fe020, type: 2}
+  - {fileID: 2100000, guid: cd3bb826e5252be4fb4279c467dda935, type: 2}
+  - {fileID: 2100000, guid: 6be3322a5c24054459c1e291ec50ffe1, type: 2}
+  - {fileID: 2100000, guid: 634173179bbb1d743977942d73dc6a4e, type: 2}
+  BGchangeTime: 30
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,7 +1193,7 @@ Transform:
   - {fileID: 334583290}
   - {fileID: 334260680}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1049811602
 GameObject:
