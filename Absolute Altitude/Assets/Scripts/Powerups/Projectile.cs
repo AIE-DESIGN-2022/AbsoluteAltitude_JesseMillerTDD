@@ -9,18 +9,18 @@ public class Projectile : MonoBehaviour
     public float lifeTime;
     public float bulletSpread;
   
-    private Rigidbody bulletRB;
+    private Rigidbody _bulletRB;
 
     // Start is called before the first frame update
     void Start()
     {
-        bulletRB = GetComponent<Rigidbody>();
+        _bulletRB = GetComponent<Rigidbody>();
 
         //randomise X and Y values of FiringForce
         firingForce.x += Random.Range(-bulletSpread, bulletSpread);
         firingForce.y += Random.Range(-bulletSpread, bulletSpread);
 
-        bulletRB.AddRelativeForce(firingForce, ForceMode.Impulse);
+        _bulletRB.AddRelativeForce(firingForce, ForceMode.Impulse);
 
         StartCoroutine("BulletTimer");
     }
@@ -43,7 +43,18 @@ public class Projectile : MonoBehaviour
         {
             if (other.gameObject.tag == "Enemy")
             {
-                other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+                EnemyHealth enemy = other.gameObject.GetComponent<EnemyHealth>();
+
+                if(enemy != null && enemy._hasShield)
+                {
+                    enemy.DestroyShield();
+                }
+                else if(enemy != null && !enemy._hasShield)
+                {
+                    enemy.TakeDamage(damage);
+                }
+
+
             }
   
 

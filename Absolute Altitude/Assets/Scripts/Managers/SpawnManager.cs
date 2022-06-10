@@ -39,7 +39,7 @@ public class SpawnManager : MonoBehaviour
                 GameObject item = Instantiate(RandomItemPrefab(), new Vector3(Random.Range(-_xSpawnRange, _xSpawnRange), transform.position.y, transform.position.z), transform.rotation);
                 item.GetComponent<Rigidbody>().AddRelativeForce(spawnForce, ForceMode.Impulse);
             }
-            else 
+            else if (randomNum >= chanceToSpawnItem) 
             {
                 GameObject enemy = Instantiate(RandomEnemyPrefab(), new Vector3(Random.Range(-_xSpawnRange, _xSpawnRange), transform.position.y, transform.position.z), transform.rotation);
                 enemy.GetComponent<Rigidbody>().AddRelativeForce(spawnForce, ForceMode.Impulse);

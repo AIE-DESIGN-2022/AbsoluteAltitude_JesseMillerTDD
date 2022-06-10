@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
     Camera cam;
     [Range(1, 20)]  //this just creates a slider in the inspector
     public int distanceFromCamera;
-    private float playerPositionZ;
+    private float _playerPositionZ;
     public float minX, maxX, minY, maxY;
     public QuadShot[] quadShots;
 
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
         float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
         Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
         Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1f, camDistance));
-        playerPositionZ = transform.position.z + camDistance;
+        _playerPositionZ = transform.position.z + camDistance;
 
         minX = bottomCorner.x + 0.5f;
         maxX = topCorner.x - 0.5f;
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
             mousePosition.y > minY &&
             mousePosition.y < maxY)
         {
-            transform.position = mousePosition + new Vector3(0, 0.5f, playerPositionZ);
+            transform.position = mousePosition + new Vector3(0, 0.5f, _playerPositionZ);
         }
 
     }

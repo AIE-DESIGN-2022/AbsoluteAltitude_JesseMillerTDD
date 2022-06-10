@@ -160,7 +160,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 22f59f7e86c04b8418df0c1e097e24d1, type: 2}
+  - {fileID: 2100000, guid: 0c806a2199629eb48af8f4bdfdb28f38, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -208,6 +208,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceFromCamera: 10
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
   quadShots:
   - {fileID: 1963303908237367868}
   - {fileID: 329363027530908106}
@@ -383,7 +387,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 22f59f7e86c04b8418df0c1e097e24d1, type: 2}
+  - {fileID: 2100000, guid: 0c806a2199629eb48af8f4bdfdb28f38, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -463,6 +467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 5899230456881024405, guid: 6fc5d2ea6556e30428431e6f042ba92d, type: 3}
   spawnPosition: {fileID: 1686367500567095255}
+  lifeTime: 0
 --- !u!1 &6429690670750092988
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,3 +543,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 5899230456881024405, guid: 6fc5d2ea6556e30428431e6f042ba92d, type: 3}
   spawnPosition: {fileID: 5157695409350026030}
+  lifeTime: 0

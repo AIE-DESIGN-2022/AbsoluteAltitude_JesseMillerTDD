@@ -10,7 +10,7 @@ public class GameOverManager : MonoBehaviour
     private float timer;
     private Timer timerScript;
     public Text scoreText;
-    private bool gameOver;
+    public bool gameOver;
     private HighScore HsManager;
 
     private void Start()
@@ -21,7 +21,7 @@ public class GameOverManager : MonoBehaviour
     }
     void Update()
     {
-        if (player == null && gameOver == false)
+        if (player == null /*&& gameOver == false*/)
         {
             endscreen.SetActive(true);
             timer = timerScript.timer;
@@ -30,7 +30,7 @@ public class GameOverManager : MonoBehaviour
 
     }
 
-    void GameOver()
+    public void GameOver()
     {
         gameOver = true;
         if (HsManager.CheckHighScore(timer))
