@@ -6,7 +6,6 @@ public class EnemyCombat : MonoBehaviour
 {
     public Transform spawnPosition;
     public GameObject projectile;
-    public GameObject targetObject;
 
     public float spawnDelay;
     private float spawnTimer;

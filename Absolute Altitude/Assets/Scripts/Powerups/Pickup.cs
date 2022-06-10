@@ -21,7 +21,6 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other + " has enetered trigger");
         if (other.gameObject.tag == "Player")
         {
             _onPickup.Invoke();

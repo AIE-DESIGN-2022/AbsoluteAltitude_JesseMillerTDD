@@ -8,7 +8,7 @@ public class QuadShot : MonoBehaviour
     public Transform spawnPosition;
     private float spawnTimer;
     private float spawnDelay = 0.2f;
-
+    public float lifeTime;
 
     // Start is called before the first frame update
     void Start()
@@ -34,5 +34,15 @@ public class QuadShot : MonoBehaviour
     public void Activate(bool isActive)
     {
         gameObject.SetActive(isActive);
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(LifeTime());
+        }
+
+    }
+    IEnumerator LifeTime()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        Activate(false);
     }
 }

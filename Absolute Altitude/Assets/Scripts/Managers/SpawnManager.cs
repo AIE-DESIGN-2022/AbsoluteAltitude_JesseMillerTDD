@@ -11,12 +11,14 @@ public class SpawnManager : MonoBehaviour
     public int chanceToSpawnItem;
     private float _counter = 0;
     public float interval = 100;
-    private float _xSpawnRange = 3f;
+    public float _xSpawnRange = 3f;
     public GameObject player;
     
 
     private void Start()
     {
+        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        _xSpawnRange = topCorner.x - 1;
         
     }
 
