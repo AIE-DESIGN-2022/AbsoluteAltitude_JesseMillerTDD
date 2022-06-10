@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public int distanceFromCamera;
     private float playerPositionZ;
     private float minX, maxX, minY, maxY;
+    public QuadShot[] quadShots;
 
     void Start()
     {
@@ -39,5 +40,13 @@ public class PlayerController : MonoBehaviour
             transform.position = mousePosition + new Vector3(0, 0.5f, playerPositionZ);
         }
 
+    }
+
+    public void ActivateQuad()
+    {      
+        foreach (QuadShot quadShot in quadShots)
+        {
+            quadShot.Activate(true);
+        }
     }
 }

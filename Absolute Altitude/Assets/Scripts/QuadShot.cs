@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileSpawner : MonoBehaviour
+public class QuadShot : MonoBehaviour
 {
-    public Transform spawnPosition;
     public GameObject projectile;
-
-    private float spawnDelay = 0.2f;
+    public Transform spawnPosition;
     private float spawnTimer;
+    private float spawnDelay = 0.2f;
 
-   // public ParticleSystem particles;
 
     // Start is called before the first frame update
     void Start()
     {
-        //particles = GetComponentInChildren<ParticleSystem>();
+        Activate(false);
     }
 
     // Update is called once per frame
@@ -31,5 +29,10 @@ public class ProjectileSpawner : MonoBehaviour
                 //particles.Play();
             }
         }
+    }
+
+    public void Activate(bool isActive)
+    {
+        gameObject.SetActive(isActive);
     }
 }

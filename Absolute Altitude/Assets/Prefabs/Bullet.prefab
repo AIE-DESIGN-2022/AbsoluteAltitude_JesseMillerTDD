@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85389e9d0c4728b4fa2a63ecfb4a2f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingForce: {x: 0, y: 0, z: 20}
+  firingForce: {x: 0, y: 20, z: 0}
   damage: 20
   lifeTime: 2
   bulletSpread: 0
