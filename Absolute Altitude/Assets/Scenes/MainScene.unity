@@ -1137,7 +1137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d16863fff9f41042989f39e50ae9bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1319845093232993666, guid: ae47f045fd38a0a44ada91f7bbef9f58, type: 3}
+  enemyPrefabs:
+  - {fileID: 1319845093232993666, guid: ae47f045fd38a0a44ada91f7bbef9f58, type: 3}
+  - {fileID: 1319845093232993666, guid: 1c34affcd8beb2d429d741d3aa6fb3a3, type: 3}
   itemPrefabs:
   - {fileID: 334583284}
   - {fileID: 585767763}
@@ -1671,7 +1673,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b2c0fe287bb8fcf4ea8fda76270fe020, type: 2}
+  - {fileID: 2100000, guid: 634173179bbb1d743977942d73dc6a4e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

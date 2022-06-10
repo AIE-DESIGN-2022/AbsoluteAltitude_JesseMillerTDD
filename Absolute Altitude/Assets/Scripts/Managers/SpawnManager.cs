@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
     public GameObject[] itemPrefabs;
     public Transform spawnPosition;
     public Vector3 spawnForce;
@@ -41,12 +41,16 @@ public class SpawnManager : MonoBehaviour
             }
             else 
             {
-                GameObject enemy = Instantiate(enemyPrefab, new Vector3(Random.Range(-_xSpawnRange, _xSpawnRange), transform.position.y, transform.position.z), transform.rotation);
+                GameObject enemy = Instantiate(RandomEnemyPrefab(), new Vector3(Random.Range(-_xSpawnRange, _xSpawnRange), transform.position.y, transform.position.z), transform.rotation);
                 enemy.GetComponent<Rigidbody>().AddRelativeForce(spawnForce, ForceMode.Impulse);
             } 
         }
     }
-
+    private GameObject RandomEnemyPrefab()
+    {
+        int randomIndex = Random.Range(0, enemyPrefabs.Length);
+        return enemyPrefabs[randomIndex];
+    }
     private GameObject RandomItemPrefab()
     {
        int randomIndex = Random.Range(0, itemPrefabs.Length);
