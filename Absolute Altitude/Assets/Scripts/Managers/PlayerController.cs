@@ -5,9 +5,16 @@ public class PlayerController : MonoBehaviour
 {
     Camera cam;
     [Range(1, 20)]  //this just creates a slider in the inspector
+
     public int distanceFromCamera;
     private float _playerPositionZ;
     public float minX, maxX, minY, maxY;
+
+    public Vector2 screenBounds;
+    public Vector2 mousePos;
+    private float objectWidth;
+    private float objectHeight;
+
     public QuadShot[] quadShots;
 
     void Start()
@@ -16,30 +23,17 @@ public class PlayerController : MonoBehaviour
         //FindGameObjectsWithTag("MainCamera")
         //so you should avoid calling it every frame
         cam = Camera.main;
-        float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
-        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1f, camDistance));
-        _playerPositionZ = transform.position.z + camDistance;
+        screenBounds = cam.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, cam.transform.position.z));
 
-        minX = bottomCorner.x + 0.5f;
-        maxX = topCorner.x - 0.5f;
-        minY = bottomCorner.y;
-        maxY = topCorner.y - 3;
     }
 
-    void Update()
+    void LateUpdate()
     {
-        Vector3 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        //This will work for both perspective and orthographic cameras
-        if (mousePosition.x > minX &&
-            mousePosition.x < maxX &&
-            mousePosition.y > minY &&
-            mousePosition.y < maxY)
-        {
-            transform.position = mousePosition + new Vector3(0, 0.5f, _playerPositionZ);
-        }
-
+        Vector3 viewPos = cam.ScreenToWorldPoint(Input.mousePosition);
+        viewPos.x = Mathf.Clamp(viewPos.x, (screenBounds.x * -1) + 0.5f, screenBounds.x - 0.5f);
+        viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1, screenBounds.y - 3.5f);
+        transform.position = new Vector3(viewPos.x + 0.25f, viewPos.y + 0.5f, transform.position.z);
     }
 
     public void ActivateQuad()

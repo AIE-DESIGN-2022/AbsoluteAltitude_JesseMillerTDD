@@ -27,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //parent.transform.LookAt(new Vector3(Camera.main.transform.position.x, parent.transform.position.y, Camera.main.transform.position.z));
+       
     }
 
     public void TakeDamage(float damageToTake)

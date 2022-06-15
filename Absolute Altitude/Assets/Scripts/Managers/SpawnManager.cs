@@ -6,13 +6,16 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
     public GameObject[] itemPrefabs;
+    public GameObject player;
+
     public Transform spawnPosition;
     public Vector3 spawnForce;
+
     public int chanceToSpawnItem;
     private float _counter = 0;
     public float interval = 100;
     public float _xSpawnRange = 3f;
-    public GameObject player;
+   
     
 
     private void Start()

@@ -782,9 +782,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   BGmats:
-  - {fileID: 2100000, guid: b2c0fe287bb8fcf4ea8fda76270fe020, type: 2}
-  - {fileID: 2100000, guid: cd3bb826e5252be4fb4279c467dda935, type: 2}
   - {fileID: 2100000, guid: 6be3322a5c24054459c1e291ec50ffe1, type: 2}
+  - {fileID: 2100000, guid: 783766798026b4a42adecb90e50ab975, type: 2}
+  - {fileID: 2100000, guid: b2c0fe287bb8fcf4ea8fda76270fe020, type: 2}
   - {fileID: 2100000, guid: 634173179bbb1d743977942d73dc6a4e, type: 2}
   BGchangeTime: 30
 --- !u!1 &705507993
@@ -1144,12 +1144,12 @@ MonoBehaviour:
   - {fileID: 334583284}
   - {fileID: 585767763}
   - {fileID: 334260674}
+  player: {fileID: 173052166}
   spawnPosition: {fileID: 1001756619}
   spawnForce: {x: 0, y: 2, z: 0}
   chanceToSpawnItem: 10
   interval: 2
   _xSpawnRange: 3
-  player: {fileID: 173052166}
 --- !u!4 &1001756619
 Transform:
   m_ObjectHideFlags: 0
@@ -1622,6 +1622,7 @@ MonoBehaviour:
   player: {fileID: 173052166}
   endscreen: {fileID: 97906050}
   scoreText: {fileID: 1090957191}
+  gameOver: 0
 --- !u!1 &1349470918
 GameObject:
   m_ObjectHideFlags: 0

@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 100
+  maxHealth: 80
   healthBar: {fileID: 2606878190274994894}
   damage: 1000
   enemyShield: {fileID: 111308290065926401}
