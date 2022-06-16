@@ -8,7 +8,7 @@ public class OffsetScrolling : MonoBehaviour
 
     private Renderer _renderer;
     private Vector2 _savedOffset;
-
+   
     void Start()
     {
         _renderer = GetComponent<Renderer>();
@@ -25,5 +25,4 @@ public class OffsetScrolling : MonoBehaviour
     {
         _renderer.material = materialToChangeTo;
     }
-
 }

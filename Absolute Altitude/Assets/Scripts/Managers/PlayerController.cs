@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
 
     public Vector2 screenBounds;
     public Vector2 mousePos;
-    private float objectWidth;
-    private float objectHeight;
+    private float _objectWidth;
+    private float _objectHeight;
 
     public QuadShot[] quadShots;
 

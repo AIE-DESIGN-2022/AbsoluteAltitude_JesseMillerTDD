@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShieldPickup : MonoBehaviour
 {
-
     void Start()
     {
-        
-        
+                
     }
 
     void Update()
     {
-     
-       
+          
     }
 
     private void OnTriggerEnter(Collider other)

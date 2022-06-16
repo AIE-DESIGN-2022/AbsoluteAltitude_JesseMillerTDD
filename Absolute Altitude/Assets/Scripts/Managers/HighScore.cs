@@ -6,6 +6,7 @@ public class HighScore : MonoBehaviour
 {
     public ScriptableHighScore highScoreItem;
     public float highscore;
+
     // Start is called before the first frame update
     void Start()
     {

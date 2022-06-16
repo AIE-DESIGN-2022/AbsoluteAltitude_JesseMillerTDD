@@ -17,10 +17,10 @@ public class HealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shieldObject.SetActive(false);
+
         currentHealth = maxHealth;
         healthSlider.maxValue = currentHealth;
-        shieldObject.SetActive(false);  
-
 
         UpdateHealthBar();
     }
@@ -30,8 +30,6 @@ public class HealthManager : MonoBehaviour
     {
 
     }
-
-
 
     public void TakeDamage(float damageToTake)
     {
@@ -43,7 +41,6 @@ public class HealthManager : MonoBehaviour
 
         else
         {
-
             currentHealth -= damageToTake;
             if (currentHealth <= 0)
             {
