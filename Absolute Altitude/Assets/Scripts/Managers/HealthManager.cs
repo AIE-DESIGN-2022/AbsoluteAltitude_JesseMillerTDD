@@ -31,6 +31,7 @@ public class HealthManager : MonoBehaviour
 
     }
 
+    //determines whether the player has shield or not and deals damage accordingly
     public void TakeDamage(float damageToTake)
     {
         if (currentShield > 0)
@@ -51,6 +52,7 @@ public class HealthManager : MonoBehaviour
         UpdateHealthBar();
     }
 
+    //allows player to recieve health from item pick up
     public void ReceiveHealth(float healthToReceive)
     {
         currentHealth += healthToReceive;
@@ -62,11 +64,13 @@ public class HealthManager : MonoBehaviour
         UpdateHealthBar();
     }
 
+    //function to update health bar depending on players current health value
     private void UpdateHealthBar()
     {
         healthSlider.value = currentHealth;
     }
 
+    //sets shield active for 1 hit
     public void TurnShieldOn()
     {
         currentShield = 1;

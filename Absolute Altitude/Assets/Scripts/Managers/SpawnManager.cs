@@ -24,6 +24,8 @@ public class SpawnManager : MonoBehaviour
     private void Start()
     {
         isPlaying = false;
+
+        //finding the screen bounds to determine size of spawner
         Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
         _xSpawnRange = topCorner.x - 1;    
     }
@@ -40,11 +42,15 @@ public class SpawnManager : MonoBehaviour
                 int randomNum = Random.Range(0, 100);
 
                 _counter = 0;
+
+                //picking a random number between 0-100, if number is less than the item spawn chance an item will be spawned
                 if (randomNum <= chanceToSpawnItem)
                 {
                     GameObject item = Instantiate(RandomItemPrefab(), new Vector3(Random.Range(-_xSpawnRange, _xSpawnRange), transform.position.y, transform.position.z), transform.rotation);
                     item.GetComponent<Rigidbody>().AddRelativeForce(spawnForce, ForceMode.Impulse);
                 }
+
+                //else if the number is greater thasn item spawn chance an enemy will be spawned
                 else if (randomNum >= chanceToSpawnItem)
                 {
                     GameObject enemy = Instantiate(RandomEnemyPrefab(), new Vector3(Random.Range(-_xSpawnRange, _xSpawnRange), transform.position.y, transform.position.z), transform.rotation);
@@ -53,11 +59,15 @@ public class SpawnManager : MonoBehaviour
             }
         }
     }
+
+    //this function picks randomly from an array of enenmy prefabs before spawning 
     private GameObject RandomEnemyPrefab()
     {
         int randomIndex = Random.Range(0, enemyPrefabs.Length);
         return enemyPrefabs[randomIndex];
     }
+
+    //sets independant percentages for each item drop chance
     private GameObject RandomItemPrefab()
     {
        int randomIndex = Random.Range(0, 100);

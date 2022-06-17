@@ -26,7 +26,7 @@ public class ProjectileSpawner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         _spawnTimer += Time.deltaTime;
         if (_spawnTimer >= _spawnDelay)
@@ -35,7 +35,7 @@ public class ProjectileSpawner : MonoBehaviour
             {
                 if (Input.GetButton("Fire1") && shootingNumb < overheat)
                 {
-                    shootingNumb += Time.deltaTime * 10f;
+                    shootingNumb += Time.deltaTime * 5f;
                     GameObject projectileClone = Instantiate(projectile, spawnPosition.position, spawnPosition.rotation);
                     _spawnTimer = 0;
                 }
@@ -53,7 +53,7 @@ public class ProjectileSpawner : MonoBehaviour
         {
             if (shootingNumb > 0)
             {
-                shootingNumb -= Time.deltaTime / 5;
+                shootingNumb -= Time.deltaTime / 3;
             }
             else
             {
